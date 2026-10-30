@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Para a minha amada</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="IMG_20260927_145917.jpg" type="image/x-icon">
+</head>
+<body>
+
+<!-- TELA DE ENTRADA -->
+<div id="entrada" class="tela">
+  <h1>❤ Para a minha amada ❤</h1>
+  <button class="botao" onclick="entrar()">Entrar</button>
+</div>
+
+<!-- TELA DE SAÍDA -->
+<div id="saida" class="tela">
+  <h1>Até logo, meu amor ❤</h1>
+  <button class="botao" onclick="voltar()">Voltar ao site</button>
+</div>
+
+<!-- CABEÇALHO -->
+<header>
+  <nav>
+    <a href="#primeiro-dia">Primeiro Dia</a>
+    <a href="#calendario">Calendário</a>
+    <a href="#fotos">Fotos</a>
+    <a href="#poema">Poema</a>
+    <span class="logo" onclick="chover()">🌱</span>
+  </nav>
+  <div class="progresso" id="progresso"></div>
+</header>
+
+<!-- HERO -->
+<div class="hero" id="hero">
+  <h1>Para a minha amada</h1>
+  <h1 class="nome">Roberta Rocha Dutra</h1><br>
+  <a href="#proposta" class="botao">Descrição</a>
+</div>
+
+<div class="divisor" style="background: linear-gradient(#627d62, #a3b878);"><span>❤ ❤ ❤</span></div>
+<!-- PROPOSTA -->
+<section id="proposta">
+  <h2>Proposta:</h2>
+  <div class="texto escondido">
+    <p>Bom, a proposta do site de certa forma é simples: eu apenas quis utilizar dos meus conhecimentos na área que quero atuar para criar esse site dedicado à pessoa que eu mais amo e mais penso, em você, meu amor.</p><br>
+    <p>Por mais que seja um site simples, ele foi feito com muito amor e carinho.</p><br>
+    <p>Espero do fundo do coração que você goste dele, pois deu muito trabalho. Essa é uma surpresa que eu fiz totalmente pensando em você.</p>
+  </div>
+  <div class="cards">
+    <!-- Para usar sua foto, troque a div "foto" por: <img src="foto1.jpg" alt="Nós dois"> -->
+    <div class="card escondido"><div class="foto"><img src="IMG_20260904_075608.jpg" alt="."></div><p>Nós dois</p></div>
+    <div class="card escondido"><div class="foto"><img src="images (1).jfif" alt="."></div></div>
+  </div>
+</section>
+
+<div class="divisor" style="background: linear-gradient(#a3b878, #671414);"><span>❤ ❤ ❤</span></div>
+<!-- PRIMEIRO DIA -->
+<section id="primeiro-dia">
+  <h2>O Primeiro Dia</h2>
+  <div class="texto escondido">
+    <p>O primeiro dia foi um ponto crucial. Estava eu lá com minha dor de barriga, quando um amigo meu veio falando que tinha uma garota gostando de mim, e eu, sem acreditar e querendo dormir, disse que não iria.</p><br>
+    <p>Ele me ouviu e disse que eu não iria. Pensando eu que já havia acabado por ali, cheguei em casa e uma pessoa me mandou solicitação no Instagram. Fui ver e era a garota que o meu amigo havia me falado, com a sua primeira cantada: “Você gosta de Pumapjl?”</p><br>
+    <p>Eu, sem entender, respondi que SIM, e daí pra frente foi um bate-papo inesquecível, com outra frase icônica: “Estou claramente dando em cima de você, posso continuar?”, e eu, que não sou besta, aceitei ksksk</p><br>
+    <p>No dia seguinte acordo com uma pergunta inusitada e mais uma nova palavra icônica: “Você gosta de bolo?”. Respondi que sim e daí pra frente foi mais bate-papo totalmente nada a ver com nada.</p><br>
+    <p>Na escola, durante o recreio, na minha sala veio ela conversar comigo, e ficamos por lá, jogando papo fora, quando vem outra pergunta e outra frase icônica nesse relacionamento, dessa vez feita por mim mesmo: “Você gosta de cotonauta?”</p><br>
+    <p>Daí pra frente foi só história.</p>
+  </div>
+  <div class="cards">
+    <div class="card escondido"><div class="foto"><img src="channels4_profile (1).jpg" alt="."></div><p>Pumapjl?</p></div>
+    <div class="card escondido"><div class="foto"><img src="images (3).jfif" alt="."></div><p>Você gosta de bolo?</p></div>
+    <div class="card escondido"><div class="foto"><img src="images (2).jfif" alt="."></div><p>Cotonauta</p></div>
+  </div>
+</section>
+
+<div class="divisor" style="background: linear-gradient(#671414, #ffffff);"><span>❤ ❤ ❤</span></div>
+<!-- CALENDÁRIO (os meses são criados pelo JS) -->
+<section id="calendario">
+  <h2>Calendário da Benção</h2>
+  <div class="legenda">
+    <span><i style="background:#00402f;"></i>24/02 a 31/10</span>
+    <span><i style="background:#f2c94c;"></i>01/11 a 31/12</span>
+  </div>
+  <div class="meses" id="meses"></div>
+</section>
+
+<div class="divisor" style="background: linear-gradient(#ffffff, #6b2a40);"><span>❤ ❤ ❤</span></div>
+<!-- FOTOS (os cards são criados pelo JS) -->
+<section id="fotos">
+  <h2>Aqui estão nossas fotos que eu mais amo</h2>
+  <div class="cards" id="galeria"></div>
+</section>
+
+<div class="divisor" style="background: linear-gradient(#6b2a40, #262b24);"><span>❤ ❤ ❤</span></div>
+<!-- POEMA -->
+<section id="poema">
+  <h2>O LAR QUE EU PROMETI SER</h2>
+  <div class="poema escondido">
+    <p>Sabe, eu realmente não queria que fosse assim,<br>entre brigas, discussões e lágrimas sem fim.<br>Quando, na verdade, tudo o que eu queria<br>era viver um amor leve, como sempre imaginei que seria.</p>
+    <p>Eu queria apenas você e eu,<br>nossos carinhos, nosso amor, o que um dia floresceu.<br>Queria ser seu lar, sua casa e abrigo,<br>o lugar onde o mundo não pudesse estar contigo.</p>
+    <p>Queria que deitasse em meu ombro para descansar,<br>que encontrasse paz nos meus olhos ao me olhar.<br>Que todo mal, toda dor e tormento<br>se afastassem de você por um só momento.</p>
+    <p>Mas vejo que estou falhando na promessa que fiz,<br>aquela que, no início do ano, tanto quis.<br>Minhas inseguranças crescem a cada dia,<br>meus erros e idiotices transformam a alegria em agonia.</p>
+    <p>E não é somente você quem tenho cansado,<br>são amigos, familiares e quem está ao meu lado.<br>Mas o que mais dói dentro do meu peito<br>é cansar justamente quem eu prometi amar do jeito mais perfeito.</p>
+    <p>Prometi, do fundo da alma, proteger você,<br>mas hoje me pergunto o que estou fazendo acontecer.<br>Sinto que tenho sido mais erro do que acerto,<br>e que estou destruindo aquilo que sempre quis por perto.</p>
+    <p>Dói saber que nosso amor está se perdendo,<br>que, por minha culpa, aos poucos está morrendo.<br>E mesmo querendo tanto mudar essa situação,<br>parece que minhas falhas falam mais alto que meu coração.</p>
+    <p>Eu queria um futuro digno ao seu lado,<br>não um amor de orgulho, silêncio e passado.<br>Não queria ser mais um casal que briga por qualquer razão,<br>mas dois corações que se escolhem, mesmo diante da confusão.</p>
+    <p>Uma parte de mim sempre encontrará em você<br>o lugar onde aprendeu a amar.</p>
+    <p>Porque o que sinto por você é tão verdadeiro,<br>que às vezes parece estranho, até para mim, por inteiro.<br>Quando olho nos seus olhos, encontro meu lar,<br>e nos seus braços descubro onde quero ficar.</p>
+    <p>Seu abraço me atrai, me aperta e me aconchega,<br>sua presença faz com que minha inquietação sossegue.<br>Sua voz acalma o caos que existe em mim,<br>e faz o mundo parecer menos ruim.</p>
+    <p>E eu espero, de verdade, ainda conseguir<br>ser aquele lar onde você possa sorrir.<br>Ser sua casa, seu abrigo e seu aconchego,<br>o lugar onde não exista espaço para o medo.</p>
+    <p>Mas, sendo sincero, existe um receio em meu coração:<br>talvez eu não consiga cumprir minha promessa, apesar da intenção.<br>E se um dia eu não puder ser esse lugar,<br>espero que encontre alguém que saiba te cuidar.</p>
+    <p>Alguém que seja paz quando o mundo for tempestade,<br>que te ofereça carinho, segurança e felicidade.<br>Alguém que nunca faça você duvidar<br>do quanto é especial e merece ser amada.</p>
+    <p>Mas existe algo que o tempo jamais poderá mudar:<br>você sempre terá um lugar onde morar.<br>Não importa quantos anos venham a passar,<br>nem quantas pessoas minha vida venha a encontrar.</p>
+    <p>No topo das minhas lembranças, haverá uma morada,<br>uma parte que será eternamente sua e mais ninguém ocupará.<br>Um espaço que não conhece substituição,<br>reservado exclusivamente a você, dentro do meu coração.</p>
+    <p>Obrigado por tudo, minha BEBEZINHA,<br>minha PRINCESINHA, minha NENÉMZINHA,<br>minha POKEMONZINHA, meu amor, minha paixão…</p>
+    <p>E, acima de todos os nomes e de qualquer definição,<br>minha futura ESPOSA.</p>
+    <p>Porque, mesmo que eu tenha falhado em ser seu lar,<br>uma parte de mim sempre encontrará em você o lugar onde aprendeu a amar.</p>
+  </div>
+</section>
+
+<div class="divisor" style="background: linear-gradient(#262b24, #665a7d);"><span>❤ ❤ ❤</span></div>
+<!-- RODAPÉ -->
+<footer>
+  <div class="caixa">Espero realmente que tenha gostado.<br>Fiz com muito carinho e cuidado.<br>Eu te amo, minha Princesa ❤</div>
+  <button class="botao" onclick="sair()">Sair do site</button>
+  <p style="margin-top:30px; font-size:1.2rem;">Copyright © 2026 Todos os direitos reservados.</p>
+</footer>
+
+<!-- TELA DE TRANSIÇÃO E BOTÃO DE VOLTAR AO INÍCIO -->
+<div id="passagem" class="passagem"><span>❤</span></div>
+<button id="botaoTopo" class="topo" onclick="irPara('inicio')" title="Voltar ao início">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>

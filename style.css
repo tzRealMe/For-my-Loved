@@ -1,0 +1,181 @@
+/* ===== BASE ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { font-family: 'Anton', Impact, sans-serif; letter-spacing: 0.5px; line-height: 1.5; overflow-x: hidden; }
+section { padding: 70px 20px; }
+h2 { text-align: center; font-size: clamp(1.6rem, 5vw, 2.2rem); margin-bottom: 30px; padding: 0 5px; }
+
+/* ===== TELAS DE ENTRADA E SAÍDA ===== */
+.tela {
+  position: fixed; inset: 0; z-index: 999;
+  background: #00402f; color: white;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 20px;
+  transition: transform 1s ease, opacity 1s ease;
+}
+.tela h1 { font-size: clamp(1.7rem, 7vw, 2.5rem); animation: pulsar 1.2s infinite; }
+.tela button { margin-top: 20px; }
+#entrada.sumir { transform: translateY(-100%); opacity: 0; pointer-events: none; }
+#saida { transform: translateY(100%); background: #671414; }
+#saida.aparecer { transform: translateY(0); }
+
+/* ===== CABEÇALHO ===== */
+header { background: #00402f; position: sticky; top: 0; z-index: 50; animation: descer 1s ease; }
+nav { display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: 4px 10px; padding: 10px; max-width: 1100px; margin: 0 auto; }
+nav a { color: white; text-decoration: none; font-size: 1.2rem; position: relative; padding: 5px; }
+/* linha que cresce embaixo do link */
+nav a::after { content: ''; position: absolute; left: 0; bottom: 0; width: 0; height: 3px; background: #a3b878; transition: width 0.3s; }
+nav a:hover::after { width: 100%; }
+.logo { font-size: 2rem; animation: pular 1.5s infinite; cursor: pointer; }
+
+/* ===== HERO ===== */
+.hero { background: #627d62; text-align: center; padding: clamp(40px, 10vw, 80px) 20px; position: relative; overflow: hidden; }
+.hero h1 { font-size: clamp(1.8rem, 8vw, 3rem); color: #000; }
+.hero .nome { display: inline-block; animation: pulsar 2.5s infinite; }
+.botao {
+  display: inline-block; margin-top: 30px; padding: 14px clamp(24px, 6vw, 40px);
+  background: #00402f; color: white; border: none; border-radius: 15px;
+  font-family: inherit; font-size: clamp(1.1rem, 4vw, 1.4rem); cursor: pointer; text-decoration: none;
+  transition: transform 0.3s, background 0.3s;
+}
+.botao:hover { transform: scale(1.1); background: #006b4d; }
+/* corações que sobem no cabeçalho (criados pelo JS) */
+.coracao { position: absolute; bottom: -30px; font-size: 1.5rem; animation: subir 6s linear forwards; }
+
+/* ===== CARDS (no lugar das polaroids) ===== */
+.cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; max-width: 1300px; margin: 0 auto; }
+.card {
+  background: #f2f2f2; padding: 12px 12px 45px; width: 14.375rem; max-width: 100%;
+  border-radius: 6px; box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+.card:nth-child(odd) { transform: rotate(-3deg); }
+.card:nth-child(even) { transform: rotate(3deg); }
+.card:hover { transform: rotate(0) scale(1.08); box-shadow: 0 12px 25px rgba(0,0,0,0.6); }
+.card .foto {
+  height: 13.125rem; background: linear-gradient(135deg, #a3b878, #627d62);
+  display: flex; align-items: center; justify-content: center; font-size: 3rem;
+}
+.card img { width: 100%; height: 13.125rem; object-fit: cover; display: block; }
+.card p { color: #000; text-align: center; margin-top: 10px; }
+
+/* ===== SEÇÕES ===== */
+#proposta { background: #a3b878; color: #000; }
+.texto { max-width: 650px; margin: 0 auto 40px; font-size: clamp(1rem, 3.5vw, 1.2rem); text-align: center; }
+#primeiro-dia { background: #671414; color: white; }
+#calendario { background: #fff; color: #000; }
+#fotos { background: #6b2a40; color: white; }
+#poema { background: #262b24; color: white; }
+.poema { max-width: 600px; margin: 0 auto; text-align: center; }
+.poema p { margin-bottom: 22px; font-size: clamp(0.95rem, 3.2vw, 1.05rem); }
+footer { background: #665a7d; padding: 50px 20px; text-align: center; color: white; }
+.caixa { background: #25255a; max-width: 450px; margin: 0 auto 30px; padding: 30px 20px; border-radius: 30px; font-size: clamp(1.1rem, 4.5vw, 1.4rem); }
+
+/* ===== CALENDÁRIO ===== */
+.meses { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1300px; margin: 0 auto; }
+.mes { width: 14.375rem; }
+.mes .foto { height: 9.375rem; background: linear-gradient(135deg, #a3b878, #627d62); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
+.mes img { width: 100%; height: 9.375rem; object-fit: cover; }
+.mes h3 { font-size: 1.6rem; margin: 6px 0; }
+.mes table { width: 100%; background: #a3b878; font-size: 0.8rem; text-align: center; }
+.mes .domingo { color: #b00000; }
+.mes .verde { background: #00402f; color: white; }
+.mes .amarelo { background: #f2c94c; color: #000; }
+.mes .verde.domingo { color: #ff9a9a; }      /* domingo em vermelho claro no fundo verde */
+.mes .amarelo.domingo { color: #b00000; }
+.mes .destaque { outline: 3px solid #f2c94c; border-radius: 50%; } /* anel amarelo no dia 24/02 */
+
+/* legenda das cores */
+.legenda { text-align: center; margin-bottom: 25px; font-size: 1.1rem; }
+.legenda span { display: inline-block; margin: 0 10px; }
+.legenda i { display: inline-block; width: 18px; height: 18px; border-radius: 4px; vertical-align: middle; margin-right: 6px; }
+
+/* ===== EFEITO AO ROLAR A PÁGINA ===== */
+.escondido { opacity: 0; transform: translateY(50px); transition: opacity 0.8s, transform 0.8s; }
+.escondido.visivel { opacity: 1; transform: translateY(0); }
+
+/* ===== TRANSIÇÃO ENTRE PARTES ===== */
+/* tela que escurece rapidinho quando você troca de seção */
+.passagem {
+  position: fixed; inset: 0; z-index: 900;
+  background: #00402f; color: white; font-size: 4rem;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity 0.4s;
+}
+.passagem.ativa { opacity: 1; pointer-events: auto; }
+.passagem span { animation: pulsar 0.6s infinite; }
+
+/* faixa com corações entre uma seção e outra */
+.divisor { height: 70px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.divisor span { font-size: 1.5rem; letter-spacing: 12px; color: white; text-shadow: 0 0 4px rgba(0,0,0,0.6); animation: pulsar 2s infinite; }
+
+/* barra de progresso no cabeçalho */
+.progresso { height: 4px; width: 0; background: #a3b878; transition: width 0.1s; }
+
+/* botão de voltar ao início */
+.topo {
+  position: fixed; right: 20px; bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  width: 55px; height: 55px; border-radius: 50%;
+  background: #00402f; color: white; border: 3px solid #a3b878;
+  font-size: 1.5rem; cursor: pointer; z-index: 60;
+  opacity: 0; transform: scale(0); transition: opacity 0.4s, transform 0.4s, background 0.3s;
+}
+.topo.mostrar { opacity: 1; transform: scale(1); }
+.topo.mostrar:hover { background: #006b4d; transform: scale(1.15); }
+
+/* como as coisas aparecem ao rolar (cada uma com um jeito) */
+.escondido.visivel { animation: entrar 0.8s ease backwards; }
+h2.escondido.visivel { animation: entrarEsquerda 0.8s ease backwards; }
+.card.visivel { transition: transform 0.4s, box-shadow 0.4s; }
+/* mantém a inclinação e o efeito de passar o mouse nos cards */
+.card.visivel:nth-child(odd) { transform: rotate(-3deg); }
+.card.visivel:nth-child(even) { transform: rotate(3deg); }
+.card.visivel:hover { transform: rotate(0) scale(1.08); box-shadow: 0 12px 25px rgba(0,0,0,0.6); }
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes entrar { from { opacity: 0; transform: translateY(60px) scale(0.9); } }
+@keyframes entrarEsquerda { from { opacity: 0; transform: translateX(-80px); } }
+@keyframes descer { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+@keyframes pular { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes pulsar { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+@keyframes subir { from { transform: translateY(0); opacity: 1; } to { transform: translateY(-450px); opacity: 0; } }
+
+/* ===== TELAS GRANDES (monitores e TVs) ===== */
+/* tudo usa rem, então aumentar a fonte base aumenta cards, textos e botões juntos */
+@media (min-width: 1600px) { html { font-size: 18px; } }
+@media (min-width: 2200px) { html { font-size: 22px; } }
+
+/* ===== TABLET E CELULAR ===== */
+@media (max-width: 768px) {
+  section { padding: 50px 14px; }
+  nav a { font-size: 1.05rem; }
+  .logo { font-size: 1.6rem; }
+  .divisor { height: 50px; }
+}
+
+/* ===== CELULAR ===== */
+@media (max-width: 600px) {
+  .cards { gap: 14px; }
+  /* fotos: 2 cards por linha */
+  .card { width: calc(50% - 7px); padding: 8px 8px 30px; }
+  .card .foto, .card img { height: 9.5rem; }
+  .card p { font-size: 0.9rem; }
+  /* calendário: 1 mês por linha para os números caberem */
+  .mes { width: min(100%, 19rem); }
+  .mes h3 { font-size: 1.4rem; }
+  .legenda span { display: block; margin: 4px 0; }
+  .topo { width: 46px; height: 46px; right: 14px; font-size: 1.3rem; }
+}
+
+/* ===== CELULAR PEQUENO ===== */
+@media (max-width: 360px) {
+  nav a { font-size: 0.95rem; }
+  .card p { font-size: 0.8rem; }
+}
+
+/* ===== CELULAR DEITADO (pouca altura) ===== */
+@media (max-height: 500px) and (orientation: landscape) {
+  .tela h1 { font-size: 1.6rem; }
+  .tela button { margin-top: 10px; }
+  .hero { padding: 30px 20px; }
+}
